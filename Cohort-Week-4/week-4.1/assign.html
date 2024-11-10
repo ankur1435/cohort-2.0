@@ -1,0 +1,25 @@
+<html>
+    <script>
+        let timeout;
+        function debouncePopulateDiv() {
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+                populateDiv()
+            }, 1000);
+        }
+        async function populateDiv() {
+            const principal = document.getElementById("principal").value;
+            const rate = document.getElementById("rate").value;
+            const time = document.getElementById("time").value;
+            const response = await fetch("http://localhost:3000/principal?principal=" + principal + "&rate=" + rate + "&time=" + time)
+            const ans = await response.text();
+            document.getElementById("finalSum").innerHTML = ans;
+        }
+    </script>
+    <body>
+        <input oninput="debouncePopulateDiv()" id="principal" type="text" placeholder="Principal"></input> <br><br>
+        <input oninput="debouncePopulateDiv()" id="rate" type="text" placeholder="Rate"></input> <br><br>
+        <input oninput="debouncePopulateDiv()" id="time" type="text" placeholder="Time"></input> <br><br>
+        <div id="finalSum"></div>
+    </body>
+</html>
