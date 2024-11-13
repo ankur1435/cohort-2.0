@@ -1,18 +1,18 @@
 import Image from "next/image";
 import localFont from "next/font/local";
 import {VideoCard} from "@/components/VideoCard";
+import { VideoGrid } from "@/components/VideoGrid";
+import { Appbar } from "@/components/AppBar";
+import { LeftBar } from "@/components/LeftBar";
 
 export default function Home() {
   return (
-    <div>
-      <VideoCard
-        title={"Marcus King - Sucker (from Arcane Season 2) [Official Visualizer]"}
-        image={"photo.jpg"}
-        thumbImage={"thumb.jpg"}
-        author={"Rohit Pithani"}
-        views={"1.2M views"}
-        timestamp={"4 days ago"}
-      ></VideoCard>
-    </div>
-  );
+    <main>
+      <Appbar/>
+      <div className="flex">
+        <LeftBar />
+        <VideoGrid />
+      </div>
+    </main>
+  )
 }
