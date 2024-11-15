@@ -1,15 +1,14 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 require('dotenv').config();
+const db = process.env.Mongo;
 
-const dbUrl = process.env.MongoDB_URL;
-
-mongoose.connect(dbUrl)
+mongoose.connect(db)
     .then(() => {
-        console.log("Connected to the MongoDB successfully");
+        console.log("Connected to MongoDB successfully");
     })
     .catch(err => {
-        console.error("Mongo connection error: ", err);
-    })
+        console.error("Mongo Connection error: ", err);
+    });
 
 const userSchema = mongoose.Schema({
     userName: {
