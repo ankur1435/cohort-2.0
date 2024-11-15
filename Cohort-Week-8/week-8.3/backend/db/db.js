@@ -1,6 +1,15 @@
 const mongoose = require("mongoose");
+require('dotenv').config();
 
-mongoose.connect("mongodb+srv://rohitpithani13:rohit%40026@paytmbuilder.c8xps.mongodb.net/");
+const dbUrl = process.env.MongoDB_URL;
+
+mongoose.connect(dbUrl)
+    .then(() => {
+        console.log("Connected to the MongoDB successfully");
+    })
+    .catch(err => {
+        console.error("Mongo connection error: ", err);
+    })
 
 const userSchema = mongoose.Schema({
     userName: {
@@ -33,6 +42,6 @@ const userSchema = mongoose.Schema({
 
 const User = mongoose.model("user", userSchema);
 
-model.exports = {
+module.exports = {
     User
 }
