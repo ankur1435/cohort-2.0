@@ -1,7 +1,4 @@
-import React, { useContext, useState } from 'react';
 import './App.css'
-import { set } from 'mongoose';
-import { CountContext } from './context';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 const Dashboard = React.lazy(() =>  import('./components/Dashboard'))
 const Landing = React.lazy(() => import('./components/Landing')) 
