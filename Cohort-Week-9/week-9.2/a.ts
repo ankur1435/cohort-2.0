@@ -32,3 +32,27 @@ function runAfter1S(fn: () => void) {
 runAfter1S(function() {
     console.log("Hii there");
 })
+
+interface User {
+    firstName: string;
+    lastName: string;
+    age: number
+}
+
+function IsLegal(user: User) {
+    if(user.age > 18) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function greetAUser(user: User) {
+    console.log("Hii there " + user.firstName);
+}
+
+IsLegal({
+    firstName: "Rohit",
+    lastName: "Pithani",
+    age: 20
+})
