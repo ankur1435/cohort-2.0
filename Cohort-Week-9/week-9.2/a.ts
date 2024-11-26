@@ -56,3 +56,47 @@ IsLegal({
     lastName: "Pithani",
     age: 20
 })
+
+interface Person {
+    name: string;
+    age: number;
+    greet(phrase: string): void;
+}
+
+class Employee implements Person {
+    name: string;
+    age: number;
+
+    constructor(n: string, a: number) {
+        this.name = n;
+        this.age = a;
+    }
+
+    greet(phrase: string): void {
+        console.log(`${phrase} ${this.name}`);
+    }
+}
+
+const e = new Employee("Rohit", 20);
+console.log(e.name, e.age);
+
+type Greetargs = number | string;
+
+function GreetUser(id: Greetargs) {
+    console.log(`ID ${id}`);
+}
+
+GreetUser(10);
+GreetUser("10");
+
+type NumberArr = number[];
+
+function maxVlaue(arr: NumberArr) {
+    let max = 0;
+    for(let i=0; i <= arr.length; i++) {
+        if(arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
