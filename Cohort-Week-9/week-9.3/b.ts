@@ -12,7 +12,7 @@ function getFirstElement<T>(arr: T[]) {
 const el = getFirstElement(["rohit", "pithani"]);
 console.log(el.toUpperCase());
 
-import { add, sub } from './b';
+import { add, sub } from './a';
 
 add(1,2);
 sub(10,5);
