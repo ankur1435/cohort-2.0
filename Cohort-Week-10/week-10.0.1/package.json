@@ -11,6 +11,10 @@
   "description": "",
   "dependencies": {
     "@types/pg": "^8.11.10",
+    "dotenv": "^16.4.5",
     "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1"
   }
 }

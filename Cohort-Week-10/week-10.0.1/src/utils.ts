@@ -1,7 +1,16 @@
 import { Client } from 'pg';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 export async function getClient() {
-    const client = new Client("postgresql://neondb_owner:j46LuXtAzsBf@ep-white-flower-a1h15xox.ap-southeast-1.aws.neon.tech/neondb?sslmode=require");
+    const client = new Client({
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+            rejectUnauthorized: false 
+        }
+    });
+
     await client.connect();
     return client;
 }
