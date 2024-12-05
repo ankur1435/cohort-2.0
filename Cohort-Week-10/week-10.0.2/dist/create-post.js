@@ -15,11 +15,11 @@ function main() {
     return __awaiter(this, void 0, void 0, function* () {
         yield prisma.post.create({
             data: {
-                title: "title of post",
-                content: "asdasd",
+                title: "go to gym",
+                content: "from 7-9",
                 author: {
                     connect: {
-                        id: 1
+                        id: 2
                     }
                 }
             }
