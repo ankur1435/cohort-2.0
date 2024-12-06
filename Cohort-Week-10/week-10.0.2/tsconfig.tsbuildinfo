@@ -1,1 +1,1 @@
-{"root":["./src/advance-queries-1.ts","./src/create-post.ts","./src/create-user.ts","./src/get-users.ts","./src/update-user.ts"],"version":"5.7.2"}
+{"root":["./src/advance-queries-1.ts","./src/advance-queries-2.ts","./src/create-post.ts","./src/create-user.ts","./src/debug.ts","./src/get-users.ts","./src/update-user.ts"],"version":"5.7.2"}
