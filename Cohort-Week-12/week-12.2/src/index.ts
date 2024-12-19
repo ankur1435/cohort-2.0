@@ -43,7 +43,7 @@ type UpdateProp = Pick<Client, 'name' | 'age' | 'email'>;
 type UpdatePropsOptional = Partial<UpdateProp>;
 
 function updateClient(UpdateProps: UpdateProps) {
-    // hit the database to update the user 
+    // Some function logic when hitting the database to update the client 
 }
 
 // Readonly
