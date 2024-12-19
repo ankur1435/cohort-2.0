@@ -13,5 +13,8 @@
     "require-stack": "^1.0.2",
     "vite": "^5.4.10",
     "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "prisma": "^6.1.0"
   }
 }
