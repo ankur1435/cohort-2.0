@@ -80,7 +80,7 @@ Each folder contains the week's assignment, codebase, and documentation as appli
 2.  Navigate to the desired week's folder:
     
    `For eg: `    `
-     cd Week-09/Task-Tracker/
+     cd Cohort-Week-19/week-19.4/
     `
     
 3.  Install dependencies:
