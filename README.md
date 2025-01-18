@@ -1,159 +1,121 @@
 
-# 100xDevs Cohort 2.0 Codes 🚀
+# 🚀 100xDevs Cohort 2.0 Codes
 
-Welcome to the repository for **100xDevs Cohort 2.0**. This repository contains the code, assignments, and projects completed during the cohort, focusing on full-stack web development, JavaScript, React, Node.js, Express, MongoDB, and related technologies.
+Welcome to the **100xDevs Cohort 2.0 Codes Repository**!
 
-## 📑 Table of Contents
+This repository contains the practical assignments, projects, and learning outcomes from the **100xDevs Cohort 2.0** program, focusing on building proficiency in full-stack web development. The repository is structured week-by-week, reflecting progressive learning, covering frontend, backend, database management, and advanced tools like Docker and CI/CD.
 
--   [Overview](#overview)
--   [Technologies](#technologies)
--   [Projects](#projects)
--   [Assignments](#assignments)
--   [How to Use](#how-to-use)
--   [Contributing](#contributing)
--   [License](#license)
--   [Connect with Me](#connect-with-me)
+----------
+
+## 📌 Table of Contents
+
+1.  [🔍 Overview](https://chatgpt.com/c/674a9ee1-bbdc-800c-a9ad-205dd6acb036#-overview)
+2.  [📂 Repository Structure](https://chatgpt.com/c/674a9ee1-bbdc-800c-a9ad-205dd6acb036#-repository-structure)
+3.  [✨ Key Features](https://chatgpt.com/c/674a9ee1-bbdc-800c-a9ad-205dd6acb036#-key-features)
+4.  [📚 Weekly Breakdown](https://chatgpt.com/c/674a9ee1-bbdc-800c-a9ad-205dd6acb036#-weekly-breakdown)
+5.  [🛠️ How to Run Projects](https://chatgpt.com/c/674a9ee1-bbdc-800c-a9ad-205dd6acb036#-how-to-run-projects)
+6.  [🤝 Contributing](https://chatgpt.com/c/674a9ee1-bbdc-800c-a9ad-205dd6acb036#-contributing)
+7.  [📜 License](https://chatgpt.com/c/674a9ee1-bbdc-800c-a9ad-205dd6acb036#-license)
+8.  [🌐 Connect with Me](https://chatgpt.com/c/674a9ee1-bbdc-800c-a9ad-205dd6acb036#-connect-with-me)
 
 ----------
 
 ## 🔍 Overview
 
-This repository is part of the **100xDevs Cohort 2.0** program. It includes hands-on practice with frontend, backend, and full-stack applications. Key concepts covered include:
-
--   **Frontend**: React, HTML, CSS, JavaScript
--   **Backend**: Node.js, Express.js
--   **Database**: MongoDB
--   Full-stack workflows, authentication, and more
-
-The projects and assignments demonstrate an understanding of modern web development practices, with a focus on building practical, real-world applications.
+The **100xDevs Cohort 2.0** program provided in-depth training on Full Stack Web Development. Through assignments and projects, this repository reflects my journey and the core technologies I learned week by week, enabling me to develop real-world applications and adopt best practices.
 
 ----------
 
-## ⚙️ Technologies
+## 📂 Repository Structure
 
-The following technologies are covered throughout the repository:
+```plaintext
+100xDevs_Cohort-2.0_Codes/
+├── Week-01/ # JavaScript basics and ES6 concepts
+├── Week-02/ # JavaScript advanced topics: closures and prototypes
+├── Week-03/ # Node.js and server-side programming
+├── Week-04/ # MongoDB integration and CRUD operations
+├── Week-05/ # React introduction and functional components
+├── Week-06/ # API integration with React
+├── Week-07/ # Authentication using JWT
+├── Week-08/ # Advanced MongoDB features
+├── Week-09/ # Custom Hooks creation and Typescript
+├── Week-10/ # Postgres and Prisma basics
+├── Week-11/ # Serverless Deployment using Hono and Cloudflare
+├── Week-12/ # Advanced Typescript, creating npm packages, Prisma and Postgres advance, connection pooling for serverless backend's
+├── Week-13/ # Developed a Blog app named Medium and deployed it on vercel
+├── Week-14/ # Intro to NextJS and NextJS backend
+├── Week-15/ # Advanced Docker and containeraization
+├── Week-16/ # Learned about Monorepo's and NextAuth Authentication using cookies
+├── Week-17/ # Started a Paytm Payment Project (Part-1)
+├── Week-18/ # Paytm Project (Part-2) 
+└── Week-19/ # Next.js middlewares, CSR/SSG rendering, WebSockets for backend comm, and Redis for caching, messaging, and queues.
 
--   **Frontend**: React, HTML, CSS, JavaScript
--   **Backend**: Node.js, Express.js
--   **Database**: MongoDB
--   **Validation**: Zod, JWT Authentication
--   **Tools**: Git, GitHub, Vite
+```
 
-----------
-
-## 🛠️ Projects
-
-Below is a list of notable projects included in this repository:
-
-### 1. **Todo App with User Authentication**
-
--   **Backend**: Node.js, Express.js, MongoDB
--   **Frontend**: React with Vite
--   **Features**:
-    -   User signup and login with JWT authentication
-    -   Add, update, and delete todos
-    -   Backend validation with Zod
-
-### 2. **Course-Selling Application**
-
--   **Admin and User Management System**
--   **User and Admin authentication using middleware**
--   **Secure JWT implementation**
-
-### 3. **Calculator and Form Validation**
-
--   **Simple calculator UI with mathematical operations**
--   **Form UI with validation** (email, empty fields)
-
-### 4. **Paytm Builder**
-
--   **Frontend**: React, CSS
--   **Features**:
-    -   Interactive design to replicate Paytm's core interface
-    -   Reusable components with proper styling
+Each folder contains the week's assignment, codebase, and documentation as applicable.
 
 ----------
 
-## 📚 Assignments
+## ✨ Key Features
 
-Assignments are structured around weekly learning goals, helping to reinforce core concepts:
+-   **Comprehensive Frontend Development**: Mastered React, state management with Redux, hooks, and component-based architecture and NextJS.
+-   **Robust Backend Development**: Built RESTful APIs using Node.js, Express, Hono and Cloudflare.
+-   **Database Integration**: Implemented both NoSQL (MongoDB) and SQL (PostgreSQL) databases for dynamic web applications.
+-   **Containerization and Deployment**: Dockerized applications for scalability and created CI/CD pipelines for seamless deployment.
+-   **Authentication**: Secured applications with JWT-based and session-based authentication.
+-   **Real-Time Applications**: Integrated WebSocket for real-time features like messaging.
+-   **Comprehensive Projects**: Developed multi-functional full-stack applications as part of weekly assignments and final projects.
 
--   **Week 1**: Basics of Node.js and Express.js
--   **Week 3**: Input validation, JWT, and MongoDB
--   **Week 5**: Building React and Node.js Todo app
--   **Week 6**: Advanced React concepts like `useMemo`, `useEffect`, and `useCallback`
--   **Week 8.3**: Paytm UI Builder using React
-
-For detailed assignments, refer to the corresponding folders.
 
 ----------
 
-## ⚡ How to Use
+## 🛠️ How to Run Projects
 
-To get started with any of the projects, follow these steps:
-
-1.  **Clone the repository**:
+1.  Clone this repository:
     
-    `git clone https://github.com/RohitPithani026/100xDevs_Cohort-2.0_Codes.git`
-    `cd 100xDevs_Cohort-2.0_Codes` 
+    ```
+    git clone https://github.com/RohitPithani026/100xDevs_Cohort-2.0_Codes.git
+    ```
     
-2.  **Navigate to the desired project folder**.
+2.  Navigate to the desired week's folder:
     
-3.  **Install dependencies**:
+    ```
+    cd Week-09/Task-Tracker/
+    ```
     
-    `npm install` 
+3.  Install dependencies:
     
-4.  **Start the development server**:
-  
-    `npm start` 
+    ```
+    npm install
+    ```
+    
+4.  Start the application:
+    
+    ```
+    npm start
+    ```
     
 
 ----------
 
 ## 🤝 Contributing
 
-Contributions are welcome! Follow these steps to contribute:
+Contributions and suggestions are welcome! Follow these steps:
 
-1.  **Fork the repository**:
-    
-    -   Click the "Fork" button at the top-right of this page to create a copy of the repository in your GitHub account.
-2.  **Clone the forked repository**:
-     
-    `git clone https://github.com/your-username/100xDevs_Cohort-2.0_Codes.git`
-    `cd 100xDevs_Cohort-2.0_Codes` 
-    
-3.  **Create a branch for your feature or fix**:
-    
-    `git checkout -b feature-or-bug-name` 
-    
-4.  **Make your changes**:
-    
-    -   Add your improvements, fix bugs, or enhance the documentation.
-5.  **Test your changes**:
-    
-    -   Ensure your code works as expected and doesn't break existing functionality.
-6.  **Commit your changes**:
-
-    `git add .`
-    `git commit -m "Description of your changes"` 
-    
-8.  **Push to your branch**:
-    
-    `git push origin feature-or-bug-name` 
-    
-9.  **Create a Pull Request (PR)**:
-    
-    -   Go to the original repository, click on the "New Pull Request" button, fill in the details, and submit your PR.
+1.  Fork this repository.
+2.  Create a feature branch.
+3.  Submit a pull request.
 
 ----------
 
-## 📄 License
+## 📜 License
 
-This repository is licensed under the **MIT License**. See the LICENSE file for details.
+This project is licensed under the MIT License.
 
 ----------
 
-## 📞 Connect with Me
+## 🌐 Connect with Me
 
--   **GitHub**: [RohitPithani026](https://github.com/RohitPithani026)
+-   **GitHub**: [Rohit Pithani](https://github.com/RohitPithani026)
 -   **Twitter (X)**: [@rohitpithani13](https://x.com/rohitpithani13)
+-   **LinkedIn**: [Rohit Pithani](https://www.linkedin.com/in/rohit-pithani-855018324/)
