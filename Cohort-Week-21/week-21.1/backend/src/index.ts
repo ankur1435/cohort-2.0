@@ -1,9 +1,12 @@
 import express from 'express';
 import rateLimit from 'express-rate-limit';
 import cors from 'cors';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors());
@@ -45,28 +48,30 @@ app.post('/generate-otp', otpLimiter, (req, res) => {
 // Endpoint to reset password
 app.post('/reset-password', passwordResetLimiter, async (req, res) => {
     const { email, otp, newPassword, token } = req.body;
-
-    let formData = new FormData();
-    formData.append('secret', "0x4AAAAAAA_QNZ9S8z_X6hx5u0efxQ_8GqY");
-    formData.append('response', token);
-    
-    const url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
-    const result = await fetch(url, {
-        body: formData,
-        method: 'POST',
-    });
-    console.log(await result.json());
     if (!email || !otp || !newPassword) {
         res.status(400).json({ message: "Email, OTP, and new password are required" });
     }
-    if (otpStore[email] === otp) {
-        console.log(`Password for ${email} has been reset to: ${newPassword}`);
-        delete otpStore[email]; // Clear the OTP after use
-        res.status(200).json({ message: "Password has been reset successfully" });
-    } else {
+    // Verify Turnstile token
+    let formData = new FormData();
+    formData.append('secret', process.env.CLOUDFLARE_SECRET || '');
+    formData.append('response', token);
+    const url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+    const result = await fetch(url, { body: formData, method: 'POST' });
+    const verification = await result.json();
+    console.log(verification);
+    if (!verification.success) {
+        res.status(403).json({ message: "Captcha verification failed" });
+    }
+    // Validate OTP
+    if (otpStore[email] !== otp) {
         res.status(401).json({ message: "Invalid OTP" });
     }
+    // Successfully reset password
+    console.log(`Password for ${email} has been reset to: ${newPassword}`);
+    delete otpStore[email]; // Clear OTP after use
+    res.status(200).json({ message: "Password has been reset successfully" });
 });
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
