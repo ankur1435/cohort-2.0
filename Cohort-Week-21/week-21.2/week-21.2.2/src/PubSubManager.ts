@@ -49,4 +49,8 @@ export class PubSubManager {
             console.log(`Sending message to user: ${sub}`);
         });
     }
+
+    public async disconnect() {
+        await this.redisClient.quit();
+    }
 }
