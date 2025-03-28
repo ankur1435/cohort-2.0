@@ -15,9 +15,8 @@ const pool = new Pool({
     const client = await pool.connect();
 
     try {
-        console.log('✅ Connected to PostgreSQL database successfully');
+        console.log('Connected to PostgreSQL database successfully');
 
-        // 1NF: Eliminate Repeating Groups
         await client.query(`
             CREATE TABLE IF NOT EXISTS Users (
                 user_id SERIAL PRIMARY KEY,
@@ -37,7 +36,6 @@ const pool = new Pool({
             );
         `);
 
-        // 2NF: Remove Partial Dependency
         await client.query(`
             CREATE TABLE IF NOT EXISTS Products (
                 product_id SERIAL PRIMARY KEY,
@@ -56,7 +54,6 @@ const pool = new Pool({
             );
         `);
 
-        // 3NF: Remove Transitive Dependency
         await client.query(`
             CREATE TABLE IF NOT EXISTS Shipping (
                 shipping_id SERIAL PRIMARY KEY,
@@ -66,9 +63,8 @@ const pool = new Pool({
             );
         `);
 
-        console.log("✅ Normalization (1NF, 2NF, 3NF) completed");
+        console.log("Normalization (1NF, 2NF, 3NF) completed");
 
-        // Insert data into Users
         await client.query(`
             INSERT INTO Users (email, password, name) VALUES 
             ('user1@example.com', 'password1', 'User One'),
@@ -76,7 +72,6 @@ const pool = new Pool({
             ON CONFLICT (email) DO NOTHING;
         `);
 
-        // Insert data into Products
         await client.query(`
             INSERT INTO Products (product_name) VALUES 
             ('Laptop'),
@@ -85,7 +80,6 @@ const pool = new Pool({
             ON CONFLICT (product_name) DO NOTHING;
         `);
 
-        // Insert data into Orders
         await client.query(`
             INSERT INTO Orders (user_id, product_name, quantity) VALUES 
             (1, 'Laptop', 1),
@@ -94,7 +88,6 @@ const pool = new Pool({
             ON CONFLICT DO NOTHING;
         `);
 
-        // Insert data into OrderDetails
         await client.query(`
             INSERT INTO OrderDetails (order_id, product_id, quantity) VALUES 
             (1, 1, 1),
@@ -103,7 +96,6 @@ const pool = new Pool({
             ON CONFLICT DO NOTHING;
         `);
 
-        // Insert data into Shipping
         await client.query(`
             INSERT INTO Shipping (order_id, shipping_address) VALUES 
             (1, '123 Main St'),
@@ -111,11 +103,11 @@ const pool = new Pool({
             ON CONFLICT DO NOTHING;
         `);
 
-        console.log("✅ Sample data inserted successfully");
+        console.log("Sample data inserted successfully");
     } catch (error) {
-        console.error("❌ Error executing normalization and data insertion:", error);
+        console.error("Error executing normalization and data insertion:", error);
     } finally {
         client.release();
-        console.log("🔄 Connection released");
+        console.log("Connection released");
     }
 })();
