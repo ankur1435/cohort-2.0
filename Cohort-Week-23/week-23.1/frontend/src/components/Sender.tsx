@@ -22,6 +22,7 @@ export function Sender() {
             socket?.send(JSON.stringify({ type: 'createOffer', sdp: pc.localDescription }));
         }
 
+        // video/audio
         pc.onicecandidate = (event) => {
             console.log(event);
             if (event.candidate) {
@@ -39,7 +40,9 @@ export function Sender() {
         }
 
         const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+        const screen = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: false });
         pc.addTrack(stream.getVideoTracks()[0]);
+        pc.addTrack(screen.getVideoTracks()[0]);
         const video = document.createElement('video');
         document.body.appendChild(video);
         video.srcObject = stream;
