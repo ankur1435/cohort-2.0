@@ -1,6 +1,8 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import request from "supertest";
 import { app } from '../index';
+
+vi.mock('../db');
 
 describe("POST /sum", () => {
     it("should return the sum of two numbers", async() => {
