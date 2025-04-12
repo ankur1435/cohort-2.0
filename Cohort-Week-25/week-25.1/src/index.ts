@@ -11,12 +11,12 @@ app.post("/sum", async(req, res) => {
 
     if (a > 1000000 || b > 1000000) {
         return res.status(422).json({
-            messsage: "Sorry we dont support big numbers"
+            message: "Sorry we dont support big numbers"
         })
     }
     const result = a + b;
 
-    const request = await prismaClient.Request.create({
+    const request = await prismaClient.request.create({
         data: {
             a: a,
             b: b,
