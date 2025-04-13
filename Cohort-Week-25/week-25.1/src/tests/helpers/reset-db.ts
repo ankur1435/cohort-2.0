@@ -1,7 +1,10 @@
-import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient();
+import { PrismaClient } from '@prisma/client'
 
-export async function cleardb () {
-    prisma.request.deleteMany()
+const prisma = new PrismaClient()
+
+export default async () => {
+    await prisma.$transaction([
+        prisma.request.deleteMany(),
+    ])
 }
