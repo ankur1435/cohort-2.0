@@ -1,4 +1,6 @@
+require('dotenv').config();
 require('newrelic');
+
 const winston = require('winston');
 const logger = winston.createLogger({
     level: 'info',

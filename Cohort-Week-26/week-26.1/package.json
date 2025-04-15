@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production NEW_RELIC_APPLICATION_FORWARDING_ENABLED=true NEW_RELIC_APP_NAME=node-app NEW_RELIC_LICENSE_KEY=c4492f3d9a30e22810c3e3bfb13e05e3FFFFNRAL node -r newrelic index.js"
+    "start": "cross-env node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "newrelic": "^12.17.0",
     "winston": "^3.17.0"
