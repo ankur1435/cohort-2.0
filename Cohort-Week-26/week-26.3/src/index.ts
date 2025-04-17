@@ -1,37 +1,35 @@
 import express from "express";
-import client, { Gauge } from "prom-client";
+import { middleware } from "./middleware";
+import client from "prom-client";
+import { metricsMiddleware } from "./metrics";
 
 const app = express();
 
-const activeUserGauge = new Gauge({
-    name: "active_users",
-    help: "Numberr of active users",
-})
-
-// @ts-ignore
-function middleware(req, res, next) {
-    activeUserGauge.inc();
-    res.on("finish", () => {
-        activeUserGauge.dec();
-    }); 
-    
-    next();
-}
-
+app.use(express.json());
 app.use(middleware);
+app.use(metricsMiddleware);
 
-app.get("/user", (req, res) => {
-    res.status(404).send({
-        name: "Rohit",
-        age: 21
+app.get("/user", async (req, res) => {
+
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    res.send({
+        name: "John Doe",
+        age: 25,
     });
 });
 
-app.get("/metrics", async(req, res) => {
+app.post("/user", (req, res) => {
+    const user = req.body;
+    res.send({
+        ...user,
+        id: 1,
+    });
+});
+
+app.get("/metrics", async (req, res) => {
     const metrics = await client.register.metrics();
-    console.log(metrics);
     res.set('Content-Type', client.register.contentType);
-    res.end(metrics); 
+    res.end(metrics);
 })
 
 app.listen(3000);
