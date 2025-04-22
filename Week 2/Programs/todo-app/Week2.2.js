@@ -10,7 +10,7 @@ todos = JSON.parse(todos);
 app.use(bodyParser.urlencoded({ extended: false }));// To read data from form submissions
 app.use(bodyParser.json());// To read data sent in JSON format
 
-app.get('/', (req, res) => {//nfj
+app.get('/', (req, res) => {
   if (!todos) {
     res.send('No todos found');
   } else {
@@ -71,7 +71,7 @@ app.post('/todos', (req, res) => {
       console.log(err);
     }
   });
-  return res.redirect('/');
+  return res.redirect('/');//  This tells the server to send a redirect response to the client, which will cause the browser to reload the home page (or go to the root URL /).
 });
 
 //route to delete a todo
