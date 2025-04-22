@@ -1,14 +1,14 @@
 const express = require('express');
+const fs = require('fs');
 const port = 3000;
 const app = express();
 const bodyParser = require('body-parser');
-const fs = require('fs');
 
 let todos = fs.readFileSync('./todos.json', 'utf-8');
 todos = JSON.parse(todos);
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));// To read data from form submissions
+app.use(bodyParser.json());// To read data sent in JSON format
 
 app.get('/', (req, res) => {
   if (!todos) {
