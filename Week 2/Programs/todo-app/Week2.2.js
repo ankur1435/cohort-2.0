@@ -82,7 +82,7 @@ app.post('/todos/:id', (req, res) => {
   }
 
   const index = todos.indexOf(todo);
-  todos.splice(index, 1);
+  todos.splice(index, 1);//  Removes the todo from the array at the found index. This is how the todo gets deleted from the array
   fs.writeFile('./todos.json', JSON.stringify(todos), (err) => {
     if (err) {
       console.log(err);
