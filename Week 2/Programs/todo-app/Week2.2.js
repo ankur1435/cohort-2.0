@@ -10,7 +10,7 @@ todos = JSON.parse(todos);
 app.use(bodyParser.urlencoded({ extended: false }));// To read data from form submissions
 app.use(bodyParser.json());// To read data sent in JSON format
 
-app.get('/', (req, res) => {
+app.get('/', (req, res) => {//nfj
   if (!todos) {
     res.send('No todos found');
   } else {
