@@ -1,0 +1,99 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: 
+  name: ecom-backend-config
+data:
+  # property-like keys; each key maps to a simple value
+  database-url: "mysql://ecom-db:3306/shop"
+  cache_size: "1000"
+  payment_gateway_url: "https://payment-gateway.example.com"
+  max_cart_items: "50"
+  session_timeout: "3600"
+
+  # file-like keys
+  application..env: |
+    app.name=ecom-backend
+    app.environment=production
+    logging.level=INFO
+    max.connection=100
+  database.properties: |
+    db.driverClassName=com.mysql.cj.jdbc.Driver
+    db.username=ecom_user
+    db.password=secretpassword
+    db.maxPoolSize=20
+  cache.properties: | 
+    cache.type=redis
+    cache.host=redis-cache
+    cache.port=6379
+    cache.ttl=600
+  payment.properties: |
+    gateway.url=https://payment-gateway.example.com
+    gateway..apiKey=your_api_key_here
+    gateway.timeout:30
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: ecom-backend-deployment
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: ecom-backend
+  template:
+    metadata:
+      labels: 
+        app: ecom-backend
+    spec: 
+      containers: 
+      - name: ecom-backend
+        image: 100xdevs/env-backend
+        ports:
+        - containerPort: 3000
+        env: 
+        - name: DATABASE_URL
+          valueFrom: 
+            configMapKeyRef:
+              name: ecom-backend-config
+              key: database-url
+        - name: CACHE_SIZE
+          valueFrom: 
+            configMapKeyRef: 
+              name: ecom-backend-config
+              key: cache_size
+        - name: PAYMENT_GATEWAY_URL
+          valueFrom: 
+            configMapKeyRef: 
+              name: ecom-backend-config
+              key: payment_gateway_url
+        - name: MAX_CART_ITEMS
+          valueFrom: 
+            configMapKeyRef: 
+              name: ecom-backend-config
+              key: max_cart_items
+        - name: SESSION_TIMEOUT
+          valueFrom:
+            configMapKeyRef:
+              name: ecom-backend-config
+              key: session_timeout
+        volumeMounts: 
+        - name: config-volume
+          mountPath: /etc/config
+          readOnly: true
+      volumes: 
+      - name: config-volume
+        configMap: 
+          name: ecom-backend-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecom-backend-service
+spec:
+  type: NodePort
+  selector: 
+    app: ecom-backend
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 30007
