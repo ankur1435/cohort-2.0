@@ -2,7 +2,6 @@
 const express = require('express');
 const zod = require('zod'); //INPUT VALIDATION LIBRARY, usage at line no. 6, 71
 const app = express();
-
 const schema = zod.array(zod.number());
 
 // MIDDLEWARE TO KEEP TRACK OF NUMBER OF REQUESTS MADE TO THE SERVER
