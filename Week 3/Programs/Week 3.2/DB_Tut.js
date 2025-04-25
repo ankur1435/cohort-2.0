@@ -2,11 +2,11 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv'); //not needed
-const jwtPassword = '123456';
+const jwtPassword = '123456';//  it's like a password for the token to make sure that no one can tamper with it. Both the signing and verifying need to use the same secret key
 
 dotenv.config(); // loads environment variables from a .env
 
-mongoose.connect(process.env.DB_URL); //replace with your mongodb url
+mongoose.connect("mongodb+srv://testJWT:mOmFoRsXuvUBBBPU@cluster0.vm6rb5d.mongodb.net/"); //replace with your mongodb url
 //will convert to: mongoose.connect(mongodb+srv://<username>:<passowrd>@<cluster_name>.mongodb.net/<model_name>)
 
 //creates or uses the schema for the collection with following object structure
