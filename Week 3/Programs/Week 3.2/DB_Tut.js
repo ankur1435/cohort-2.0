@@ -10,7 +10,7 @@ mongoose.connect(process.env.DB_URL); //replace with your mongodb url
 //will convert to: mongoose.connect(mongodb+srv://<username>:<passowrd>@<cluster_name>.mongodb.net/<model_name>)
 
 //creates or uses the schema for the collection with following object structure
-const User = mongoose.model('users', {
+const User = mongoose.model('users', {// User is the Model — you’ll use it to interact with the "users" collection
   name: String,
   username: String,
   pasword: String,
@@ -107,3 +107,10 @@ app.get('/users', async function (req, res) {
 app.listen(3000, function () {
   console.log('Server started on port 3000');
 });
+
+
+
+
+
+// JWT consists of <Header>.<Payload>.<Signature>
+

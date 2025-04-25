@@ -26,7 +26,7 @@ const ALL_USERS = [
 function userExists(username, password) {
   // write logic to return true or false if this user exists
   // in ALL_USERS array
-  return ALL_USERS.some(function (user) {
+  return ALL_USERS.some(function (user) {// The .some() method is an Array method that checks if at least one element in the array satisfies a condition specified by a callback function
     return user.username === username && user.password === password;
   });
 }
