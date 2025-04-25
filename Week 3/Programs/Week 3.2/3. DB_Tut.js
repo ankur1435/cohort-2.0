@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv'); //not needed
 const jwtPassword = '123456';
 
-dotenv.config(); //not needed
+dotenv.config(); // loads environment variables from a .env
 
 mongoose.connect(process.env.DB_URL); //replace with your mongodb url
 //will convert to: mongoose.connect(mongodb+srv://<username>:<passowrd>@<cluster_name>.mongodb.net/<model_name>)
@@ -90,7 +90,7 @@ app.get('/users', async function (req, res) {
     const decoded = jwt.verify(token, jwtPassword);
     const username = decoded.username;
     // return a list of users other than this username from the database
-    const users = await User.find({ username: { $ne: username } });
+    const users = await User.find({ username: { $ne: username } });// $ne stands for "not equal" in MongoDB.
     return res.json({
       msg: 'Users fetched successfully',
       username: username,

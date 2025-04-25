@@ -6,18 +6,19 @@ const schema = zod.array(zod.number());
 
 // MIDDLEWARE TO KEEP TRACK OF NUMBER OF REQUESTS MADE TO THE SERVER
 let numberOfRequests = 0;
-app.use(express.json()); //middleware to parse the body of the request 
+app.use(express.json()); //middleware to parse the JSON data make it readible for express Without using the built-in middleware express.json(), any JSON data sent in a request is NOT readable by Express — it will be undefined
 
 function calculateRequests(req, res, next) {
   numberOfRequests++;
   console.log('Number of requests made: ', numberOfRequests);
-  next();
+  next();// next() is used to pass control to the next middleware or route handler.
 }
 
 //MIDDLEWARE TO CALCULATE THE TIME TAKEN TO HANDLE EACH REQUEST
+
 function averageTime(req, res, next) {
   const start = Date.now();
-  res.on('finish', function () {
+  res.on('finish', function () {// After the response is completely sent, run this function.
     const end = Date.now();
     console.log('Time taken to handle request: ', (end - start) / 1000, 'secs');
   });
@@ -47,7 +48,7 @@ app.get('/health-checkup', calculateRequests, averageTime, function (req, res) {
 //send a GET request to http://localhost:3000/health-checkup
 //with headers: username: inder, password: pass and query: kidneyId: 1
 
-/*
+
 // HOW TO USE MULTIPLE MIDDLEWARES
 app.get('/health-checkup-2', function (req, res, next) {
   console.log('hi from req1');
@@ -55,14 +56,14 @@ app.get('/health-checkup-2', function (req, res, next) {
 }, function(req, res) {
   console.log('hi from req2');
 });
-*/
 
-//GLOBAL CATCHES: HANDLES AND CUSTOMIZES ALL ERRORS/EXCEPTIONS IN THE SERVER
+
+//Global Error Handling Middleware: HANDLES AND CUSTOMIZES ALL ERRORS/EXCEPTIONS IN THE SERVER
 app.use(function (err, req, res, next) {
   res.json({
     msg: 'Sorry something is up with our server',
   });
-});
+});// If no route or middleware calls next(error), your global error handler will never be triggered. It only works if an error is passed to it using next(error)
 
 
 
@@ -96,7 +97,7 @@ function validateInputs(obj) {
   return response;
 }
 
-app.post('/login', function (req, res) {
+app.post('/login',calculateRequests,averageTime, function (req, res) {
   const response = validateInputs(req.body);
   if (!response.success) {
     res.status(400).json({ msg: 'Something wrong with your inputs!' });
