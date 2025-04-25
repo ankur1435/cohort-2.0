@@ -1,0 +1,8 @@
+services:
+  nfs-server:
+    image: itsthenetwork/nfs-server-alpine
+    privileged: true
+    tmpfs:
+      - /exports
+    environment:
+      - SHARED_DIRECTORY=/exports
