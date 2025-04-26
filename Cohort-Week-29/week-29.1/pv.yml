@@ -10,4 +10,4 @@ spec:
   storageClassName: nfs
   nfs:
     path: /exports
-    server: host.docker.internal
+    server: 172.18.0.2

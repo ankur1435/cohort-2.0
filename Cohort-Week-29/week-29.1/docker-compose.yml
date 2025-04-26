@@ -1,8 +1,17 @@
+version: '3.8'
+
 services:
   nfs-server:
-    image: itsthenetwork/nfs-server-alpine
+    image: itsthenetwork/nfs-server-alpine:latest
+    container_name: nfs-server
     privileged: true
-    tmpfs:
-      - /exports
-    environment:
-      - SHARED_DIRECTORY=/exports
+    environment: 
+      SHARED_DIRECTORY: /exports
+    volumes: 
+      - data:/exports:rw
+    ports:
+      - "3049:2049"
+    restart: unless-stopped
+
+volumes:
+  data:

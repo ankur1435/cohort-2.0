@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: csi-pvc
+spec: 
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 40Gi
+  storageClassName: vultr-block-storage-hdd
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mongo-pod
+spec: 
+  containers: 
+  - name: mongo
+    image: mongo:4.4
+    command: ["mongod", "--bind_ip_all"]
+    ports: 
+    - containerPorts: 27017
+    volumeMounts: 
+    - name: mongo-storage
+      mountPath: /data/db
+  volumes:
+  - name: mongo-volume
+    persistentVolumeClaim:
+      claimName: csi-pvc
