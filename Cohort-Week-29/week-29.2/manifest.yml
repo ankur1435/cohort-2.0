@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: cpu-deployment
+spec: 
+  replicas: 2
+  selector: 
+    matchLabels: 
+      app: cpu-app
+  template:
+    metadata: 
+      labels: 
+        app: cpu-app
+    spec: 
+      containers: 
+      - name: cpu-app
+        image: 100xdevs/week-28:latest
+        ports: 
+        - containerPort: 3000
+        resources: 
+          requests: 
+            cpu: "500m"
+            memory: "256Mi"
+          limits:
+            cpu: "1"
+            memory: "512Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-service
+spec:
+  selector: 
+    app: cpu-app
+  ports: 
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer
+--- 
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: cpu-hpa
+spec: 
+  scaleTargetRef: 
+    apiVersion: apps/v1
+    kind: Deployment
+    name: cpu-deployment
+  minReplicas: 2
+  maxReplicas: 5
+  metrics: 
+  - type: Resource
+    resource: 
+      name: cpu
+      target: 
+        type: Utilization
+        averageUtilization: 50
