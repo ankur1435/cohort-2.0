@@ -6,7 +6,7 @@ function App() {
     title: "Go to gym",
     description: "Go to gym from 7 to 9",
     completed: false
-  }, {
+  }, { 
     title: "Study DSA",
     description: "Study DSA from 9 to 11",
     completed: true
@@ -21,7 +21,10 @@ function App() {
     setTodos([...todos, {
       title: "New todo",
       description: "Description of new todo"
-    }])
+    },{
+      title: "New todo",
+      description: "Description of new todo 2"
+    }])// setTodos([...todos, newTodo]) means you're creating a new array with the old todos and the new one, and then updating the state
   }
 
   
@@ -30,7 +33,7 @@ function App() {
       <button onClick={addTodo}>Add a random todo</button>
 
       {todos.map(function(todo) {
-        return <Todo title={todo.title} description={todo.description}></Todo>
+        return <Todo title={todo.title} description={todo.description}></Todo>// todos.map is a JavaScript array method, and we wrap it in {} to tell React we want to run JavaScript code inside the JSX
       })}
     
     </div>

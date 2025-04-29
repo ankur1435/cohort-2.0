@@ -31,10 +31,10 @@ export function CreateTodo(props) {
                 method: "POST",
                 body: JSON.stringify({
                     title: title,
-                    description: description
+                    description: description //  Converts a JavaScript object into a JSON string, which can be sent in the body of a request.
                 }),
                 headers: {
-                    "Content-type": "application/json"
+                    "Content-type": "application/json" // Content-type: application/json: This header tells the server that the data in the request body is in JSON format.
                 }
             })
                 .then(async function(res) {
@@ -43,4 +43,4 @@ export function CreateTodo(props) {
                 })
         }}>Add a todo</button>
     </div>
-}
+} 

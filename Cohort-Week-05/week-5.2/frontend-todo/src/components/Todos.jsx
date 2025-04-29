@@ -1,6 +1,6 @@
 export function Todos({ todos }) {
     return (
-        <div>
+        <div> 
             {todos.map((todo) => (
                 <div key={todo._id}>
                     <h1>{todo.title}</h1>

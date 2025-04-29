@@ -4,7 +4,7 @@ import { CreateTodo } from './components/CreateTodo'
 import { Todos } from './components/Todos'
 
 // useEffect hook
-function App() {
+function App() { 
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
