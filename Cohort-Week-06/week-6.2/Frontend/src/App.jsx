@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import "./App.css";
 
 function App() {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(0); 
   const [inputValue, setInputValue] = useState(1);
 
   let count = useMemo(() => {
@@ -24,7 +24,7 @@ function App() {
       <br/>
       <button onClick={() => {
         setCounter(counter + 1);
-      }}>Counter ({counter})</button>  
+      }}>Counter ({counter})</button> 
     </div>
   );
 }

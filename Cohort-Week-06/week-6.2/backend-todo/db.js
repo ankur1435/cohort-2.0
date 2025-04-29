@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 mongoose.connect("mongodb+srv://rohitpithani13:rohit%40026@week6-2.k94vk.mongodb.net/todos");
 
-const todoSchema = mongoose.Schema({
+const todoSchema = mongoose.Schema({ 
     title: String,
     description: String,
     completed: {

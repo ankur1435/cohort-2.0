@@ -4,9 +4,10 @@ function App() {
   return <div>
     <CardWrapper>
       <div>
-        Hi there
+        Hi there 
       </div>
     </CardWrapper>
+    
     <CardWrapper>
       <div>
         Hello there

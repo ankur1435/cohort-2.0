@@ -5,7 +5,7 @@ import './App.css'
 // function App() {
 //   const [count, setCount] = useState(0)
 
-//   return (
+//   return ( 
 //     <div>
 //       <button onClick={(function() {
 //         setCount(count + 1);
@@ -59,10 +59,10 @@ import './App.css'
 //     });
 //   }, [])
 
-//   useEffect(() => {
+//   useEffect(() => { 
 //     setBankData({
 //       income: 100
-//     }, 5000);
+//     }, 5000);  mkfl
 //   }, [])
 
 //   const cryptoReturns = useMemo(() => {
