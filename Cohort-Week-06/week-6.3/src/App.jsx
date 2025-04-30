@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import './App.css'
 
 // useState
+
 // function App() {
 //   const [count, setCount] = useState(0)
 
@@ -15,12 +16,14 @@ import './App.css'
 // }
 
 // useEffect
+
 // function App() {
 //   const [bankData, setBankData] = useState({});
 //   const [exchangeData, setExchangeData] = useState({});
+
 //   console.log("Hii There re-rendered");
 
-//   useEffect(() => function() {
+//   useEffect(() => {
 //     setTimeout(() => {
 //       setBankData({income: 100});
 //     }, 3000)
@@ -41,7 +44,8 @@ import './App.css'
 //   )
 // }
 
-// useMemo
+// useMemo // useMemo is used to remember (cache) the result of a calculation so it doesn’t run again unless needed.
+
 // function App() {
 //   const [exchange1Data, setExchange1Data] = useState({});
 //   const [exchange2Data, setExchange2Data] = useState({});
@@ -62,7 +66,7 @@ import './App.css'
 //   useEffect(() => { 
 //     setBankData({
 //       income: 100
-//     }, 5000);  mkfl
+//     }, 5000);  
 //   }, [])
 
 //   const cryptoReturns = useMemo(() => {
