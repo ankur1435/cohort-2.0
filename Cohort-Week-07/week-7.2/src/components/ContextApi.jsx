@@ -2,7 +2,7 @@ import { RecoilRoot, useRecoilState, useRecoilValue, useSetRecoilState } from "r
 import { countAtom, evenSelector } from "../store/atoms/count";
 import React from "react";
 
-function ContextApi() {
+function ContextApi() { 
 
     // wrap anyone that wants to use the teleported value inside a provider
     return (

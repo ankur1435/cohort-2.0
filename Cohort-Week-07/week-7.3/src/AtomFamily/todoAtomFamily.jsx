@@ -6,7 +6,7 @@ export function AtomFamilyTodo() {
         <Todo id={1} />
         <Todo id={2} />
     </RecoilRoot>
-}
+} 
 
 function Todo({id}) {
     const currentTodo = useRecoilValue(todoAtomFamily(id));

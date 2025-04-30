@@ -6,7 +6,7 @@ export const networkAtom = atom({
 });
 
 export const jobskAtom = atom({
-    key: "jobskAtom",
+    key: "jobskAtom", 
     default: 0
 });
 

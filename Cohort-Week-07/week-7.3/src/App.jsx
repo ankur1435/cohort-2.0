@@ -5,7 +5,7 @@ import { AtomFamilyTodo } from './AtomFamily/todoAtomFamily';
 
 function App() {
   return(
-    <div>
+    <div> 
       <RecoilRoot>
         <MainApp />
         <AtomFamilyTodo />
