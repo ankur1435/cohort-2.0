@@ -10,7 +10,7 @@ const todos = [{
   completed: false,
 }, {
   id: 2,
-  title: "Todo 2",
+  title: "Todo 2", 
   description: "This is todo 2",
   completed: false,
 }, {
