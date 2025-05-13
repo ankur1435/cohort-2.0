@@ -22,4 +22,4 @@ export default config;
 //Storybook aapke UI components (jaise Button, Card, Modal) ko alag se develop, test, aur showcase karne ka ek tool hai — bina poori website ya app chalaye.  
 
 
-// MUI ek React library hai jisme pre-designed UI components hote hain jo Google ke Material Design par based hote hain. Ye development fast, clean aur responsive banata hai
+// MUI ek React library hai jisme pre-designed UI components hote hain jo Google ke Material Design par based hote hain. Ye development fast, clean aur responsive banata hai   
