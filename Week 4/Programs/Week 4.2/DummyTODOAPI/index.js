@@ -5,10 +5,13 @@ const app = express();
 const port = 3000;
 
 app.use(express.json());
+
 //fix the CORS issue
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
-  next();
+  next();// Middleware to enable Cross-Origin Resource Sharing (CORS) by allowing requests from any origin
+  // It sets the 'Access-Control-Allow-Origin' header to '*' to allow requests from all domains.
+  
 });
 
 let todos = [

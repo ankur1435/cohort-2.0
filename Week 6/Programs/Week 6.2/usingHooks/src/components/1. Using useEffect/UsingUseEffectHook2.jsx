@@ -4,7 +4,7 @@ import TodosById from './TodosById';
 const UsingUseEffectHook2 = () => {
   const [selectedId, setSelectedId] = useState(1);
 
-  return (
+  return ( 
     <>
       <h1>Using useEffect Hook - Example 2</h1>
       <p>Get Todo with ID</p>

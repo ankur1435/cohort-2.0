@@ -12,7 +12,7 @@ const useTodos = () => {
         setTodos(res.data.todos);
       }
     );
-  };
+  }; 
 
   useEffect(() => {
     getTodos();

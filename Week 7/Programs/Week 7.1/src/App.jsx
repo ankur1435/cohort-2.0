@@ -4,7 +4,7 @@ import './App.css';
 const Dashboard = lazy(() => import('./components/UsingRoutes/Dashboard')); //syntax to load this component 'lazily'
 import Landing from './components/UsingRoutes/Landing';
 import TopBar from './components/UsingRoutes/Topbar';
-import Main from './components/UsingPropDrilling/Main';
+import Main from './components/UsingPropDrilling/Main'; 
 
 function App() {
   return (

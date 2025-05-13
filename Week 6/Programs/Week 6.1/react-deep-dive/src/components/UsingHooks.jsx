@@ -5,7 +5,7 @@ const UsingHooks = () => {
   const [todos, setTodos] = useState([]);
 
   const getTodos = async () => {
-    const res = await fetch('https://sum-server.100xdevs.com/todos');
+    const res = await fetch('https://sum-server.100xdevs.com/todos'); 
     const data = await res.json();
     setTodos(data.todos);
   };

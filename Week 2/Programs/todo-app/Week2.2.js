@@ -56,7 +56,7 @@ app.post('/todos', (req, res) => {
     res
       .status(400)
       .send('Title is required and should be minimum 3 characters');
-    return;
+    return; 
   }
 
   const todo = {

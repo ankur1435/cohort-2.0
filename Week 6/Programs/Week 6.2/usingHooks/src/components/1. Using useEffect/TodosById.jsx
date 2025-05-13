@@ -3,7 +3,8 @@ import axios from 'axios';
 import Todo from '../Todo';
 
 const TodosById = ({ id }) => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([]); 
+  
   const getTodo = async (id) => {
     const res = await axios(
       `https://sum-server.100xdevs.com/todos?id=${id}`

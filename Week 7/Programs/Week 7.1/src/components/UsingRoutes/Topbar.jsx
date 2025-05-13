@@ -4,7 +4,7 @@ const TopBar = () => {
   const navigate = useNavigate();
   return (
     <>
-      <button
+      <button 
         onClick={() => {
           // window.location.href = '/'; //it is a global object in the browser, we simply change the 'href' key's value
 

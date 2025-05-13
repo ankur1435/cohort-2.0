@@ -5,9 +5,9 @@ function App() {
   const [count, setCount] = useState(0);
 
   // const onClickHandler = () => {
-  //   setCount(count + 1);
+  //   setCount(count + 1); 
   // };
-
+ 
   return (
     <div>
       <CustomButton count={count} setCount={setCount} />
