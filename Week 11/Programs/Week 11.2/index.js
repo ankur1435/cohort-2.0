@@ -1,16 +1,16 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-app.use(cors());
+app.use(cors()); 
 
-const todos = [{
+const todos = [{ 
   id: 1,
-  title: "Todo 1",
+  title: "Todo 1",  
   description: "This is todo 1",
   completed: false,
 }, {
   id: 2,
-  title: "Todo 2",
+  title: "Todo 2", 
   description: "This is todo 2",
   completed: false,
 }, {

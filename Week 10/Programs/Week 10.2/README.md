@@ -3,7 +3,7 @@
 2. `npx prisma migrate dev --name UserAndTodoAdded` (one time)
 3. Uncomment the /* .. */ part for each STEP in the `index.ts` file and run the following command in the terminal 👇
 
-   a. `tsc -b`
+   a. `tsc -b` 
    
    b. `node dist/index.js`
 
