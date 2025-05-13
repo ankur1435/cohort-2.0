@@ -19,4 +19,4 @@ export default config;
 
 
 
-//Storybook aapke UI components (jaise Button, Card, Modal) ko alag se develop, test, aur showcase karne ka ek tool hai — bina poori website ya app chalaye.
+//Storybook aapke UI components (jaise Button, Card, Modal) ko alag se develop, test, aur showcase karne ka ek tool hai — bina poori website ya app chalaye.    
